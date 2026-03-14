@@ -29,22 +29,24 @@
       z-index: 1000;
       opacity: 0.4;
     }
-    nav {
-      position: fixed; top: 0; width: 100%; z-index: 999;
-      padding: 20px 60px;
-      display: flex; justify-content: space-between; align-items: center;
-      background: linear-gradient(to bottom, rgba(14,11,7,0.95), transparent);
-      transition: background 0.3s;
-    }
+
+    /* NAV */
+    nav { position: fixed; top: 0; width: 100%; z-index: 999; padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; background: linear-gradient(to bottom, rgba(14,11,7,0.95), transparent); transition: background 0.3s; }
     nav.scrolled { background: rgba(14,11,7,0.97); border-bottom: 1px solid rgba(201,168,76,0.2); }
     .nav-logo { font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 700; color: var(--gold); letter-spacing: 3px; text-decoration: none; }
     .nav-links { display: flex; gap: 40px; list-style: none; }
-    .nav-links a { font-family: 'Raleway', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: var(--cream2); text-decoration: none; transition: color 0.3s; }
+    .nav-links a { font-size: 0.75rem; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: var(--cream2); text-decoration: none; transition: color 0.3s; }
     .nav-links a:hover { color: var(--gold); }
 
     /* HERO */
     .hero { position: relative; height: 100vh; min-height: 700px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-    .hero-bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1544919982-b61976f0ba43?w=1800&q=80'); background-size: cover; background-position: center 40%; transform: scale(1.05); animation: heroZoom 20s ease-in-out infinite alternate; }
+    .hero-bg {
+      position: absolute; inset: 0;
+      /* Archaeological ruins - Colosseum/ancient site */
+      background-image: url('https://images.unsplash.com/photo-1604514628550-37477afdf4e3?w=1800&q=80');
+      background-size: cover; background-position: center 40%;
+      transform: scale(1.05); animation: heroZoom 20s ease-in-out infinite alternate;
+    }
     @keyframes heroZoom { from { transform: scale(1.05); } to { transform: scale(1.12); } }
     .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(14,11,7,0.85) 0%, rgba(14,11,7,0.5) 50%, rgba(14,11,7,0.75) 100%); }
     .hero-content { position: relative; z-index: 2; text-align: center; padding: 0 20px; animation: fadeUp 1.4s ease forwards; }
@@ -75,7 +77,7 @@
     .service-card { position: relative; overflow: hidden; height: 500px; cursor: pointer; }
     .service-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; filter: brightness(0.5) saturate(0.7); }
     .service-card:hover img { transform: scale(1.08); filter: brightness(0.35) saturate(0.5); }
-    .service-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(14,11,7,0.95) 0%, rgba(14,11,7,0.2) 60%, transparent 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 40px 36px; transition: all 0.4s; }
+    .service-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(14,11,7,0.95) 0%, rgba(14,11,7,0.2) 60%, transparent 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 40px 36px; }
     .service-num { font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 300; color: rgba(201,168,76,0.2); line-height: 1; margin-bottom: 12px; transition: color 0.4s; }
     .service-card:hover .service-num { color: rgba(201,168,76,0.5); }
     .service-name { font-family: 'Cinzel', serif; font-size: 1.3rem; font-weight: 600; color: var(--cream); margin-bottom: 12px; }
@@ -135,10 +137,10 @@
     /* CONTACT */
     .contact { padding: 140px 0; background: var(--dark2); }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; }
-    .contact-body { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 400; line-height: 1.9; color: var(--text); margin-bottom: 50px; }
+    .contact-body { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; line-height: 1.9; color: var(--text); margin-bottom: 50px; }
     .contact-items { display: flex; flex-direction: column; gap: 28px; }
     .contact-item { display: flex; gap: 20px; align-items: flex-start; }
-    .contact-icon { width: 44px; height: 44px; border: 1px solid rgba(201,168,76,0.3); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; color: var(--gold); }
+    .contact-icon { width: 44px; height: 44px; border: 1px solid rgba(201,168,76,0.3); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
     .contact-item-label { font-size: 0.62rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 5px; }
     .contact-item-value { font-size: 0.9rem; color: var(--text); line-height: 1.6; }
     .contact-item-value a { color: var(--text); text-decoration: none; transition: color 0.3s; }
@@ -149,7 +151,6 @@
     .form-input, .form-textarea, .form-select { background: rgba(255,255,255,0.03); border: 1px solid rgba(201,168,76,0.2); color: var(--cream); padding: 14px 18px; font-family: 'Raleway', sans-serif; font-size: 0.85rem; outline: none; transition: border-color 0.3s; appearance: none; }
     .form-input:focus, .form-textarea:focus, .form-select:focus { border-color: var(--gold); }
     .form-textarea { resize: vertical; min-height: 130px; }
-    .form-select { cursor: pointer; }
     .form-select option { background: var(--dark2); }
     .submit-btn { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 16px 44px; font-family: 'Raleway', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; cursor: pointer; transition: all 0.4s; align-self: flex-start; position: relative; overflow: hidden; }
     .submit-btn::before { content: ''; position: absolute; inset: 0; background: var(--gold); transform: translateX(-100%); transition: transform 0.4s; z-index: -1; }
@@ -158,7 +159,7 @@
 
     /* FOOTER */
     footer { background: var(--dark); border-top: 1px solid rgba(201,168,76,0.15); padding: 60px 0 40px; }
-    .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 50px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto 50px; padding: 0 40px; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; }
     .footer-logo { font-family: 'Cinzel', serif; font-size: 1.3rem; font-weight: 700; color: var(--gold); letter-spacing: 3px; margin-bottom: 16px; }
     .footer-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1rem; color: var(--text-dim); line-height: 1.7; }
     .footer-heading { font-family: 'Cinzel', serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
@@ -166,15 +167,14 @@
     .footer-links a { font-size: 0.82rem; color: var(--text-dim); text-decoration: none; transition: color 0.3s; }
     .footer-links a:hover { color: var(--gold); }
     .footer-bottom { max-width: 1200px; margin: 0 auto; padding: 24px 40px 0; border-top: 1px solid rgba(201,168,76,0.1); display: flex; justify-content: space-between; align-items: center; }
-    .footer-copy { font-size: 0.72rem; color: var(--text-dim); letter-spacing: 1px; }
+    .footer-copy { font-size: 0.72rem; color: var(--text-dim); }
     .footer-copy span { color: var(--gold); }
 
-    /* REVEAL */
+    /* REVEAL ANIMATIONS */
     .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
     .reveal-delay-1 { transition-delay: 0.1s; }
     .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
 
     @media (max-width: 900px) {
       nav { padding: 16px 24px; }
@@ -189,6 +189,7 @@
 </head>
 <body>
 
+<!-- NAV -->
 <nav id="navbar">
   <a href="#" class="nav-logo">DS T Services</a>
   <ul class="nav-links">
@@ -200,6 +201,7 @@
   </ul>
 </nav>
 
+<!-- HERO — Ancient Roman ruins background -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
@@ -217,6 +219,7 @@
   </div>
 </section>
 
+<!-- SERVICES -->
 <section class="services" id="services">
   <div class="section-inner">
     <p class="section-label reveal">What We Do</p>
@@ -224,8 +227,10 @@
     <div class="gold-line reveal"></div>
   </div>
   <div class="services-grid">
+
+    <!-- Service 1: Archaeological Discovery — active dig site -->
     <div class="service-card reveal">
-      <img src="https://images.unsplash.com/photo-1544919982-b61976f0ba43?w=800&q=80" alt="Archaeological Discovery">
+      <img src="https://images.unsplash.com/photo-1604514628550-37477afdf4e3?w=800&q=80" alt="Archaeological excavation">
       <div class="service-overlay">
         <span class="service-num">01</span>
         <h3 class="service-name">Archaeological Discovery</h3>
@@ -233,8 +238,10 @@
         <span class="service-arrow">Learn More →</span>
       </div>
     </div>
+
+    <!-- Service 2: Antiques Dealer — ancient pottery/artifacts -->
     <div class="service-card reveal reveal-delay-1">
-      <img src="https://images.unsplash.com/photo-1549813069-f95e44d7f498?w=800&q=80" alt="Antiques">
+      <img src="https://images.unsplash.com/photo-1599940824399-b87987ceb72a?w=800&q=80" alt="Antique artifacts">
       <div class="service-overlay">
         <span class="service-num">02</span>
         <h3 class="service-name">Antiques Dealer</h3>
@@ -242,6 +249,8 @@
         <span class="service-arrow">Learn More →</span>
       </div>
     </div>
+
+    <!-- Service 3: Real Estate — grand historic estate -->
     <div class="service-card reveal reveal-delay-2">
       <img src="https://images.unsplash.com/photo-1560184897-ae75f418493e?w=800&q=80" alt="Real Estate">
       <div class="service-overlay">
@@ -254,12 +263,17 @@
   </div>
 </section>
 
+<!-- ABOUT -->
 <section class="about" id="about">
   <div class="section-inner">
     <div class="about-grid">
       <div class="about-images reveal">
-        <img class="about-img-main" src="https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=900&q=80" alt="Archaeological work">
-        <img class="about-img-accent" src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=700&q=80" alt="Ancient artifacts">
+        <!-- Main: archaeologist at excavation -->
+        <img class="about-img-main"
+             src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=900&q=80" alt="Archaeological excavation work">
+        <!-- Accent: ancient pottery collection -->
+        <img class="about-img-accent"
+             src="https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=700&q=80" alt="Ancient pottery artifacts">
         <div class="about-badge">
           <div class="about-badge-text">Est.<br>2010<br>Excellence</div>
         </div>
@@ -281,6 +295,7 @@
   </div>
 </section>
 
+<!-- DISCOVERIES -->
 <section class="discoveries" id="discoveries">
   <div class="section-inner">
     <div class="discoveries-header">
@@ -291,50 +306,62 @@
       </div>
     </div>
     <div class="discoveries-grid">
+
+      <!-- Featured: archaeological ruins/mosaic dig -->
       <div class="discovery-card reveal">
-        <img src="https://images.unsplash.com/photo-1561049501-5bb3e5a4b8b8?w=900&q=80" alt="Ancient mosaic">
+        <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=900&q=80" alt="Archaeological ruins discovery">
         <div class="discovery-info">
           <span class="discovery-tag">Featured Discovery</span>
           <h3 class="discovery-title">Unveiling the Lost Mosaic of the Eastern Meridian</h3>
           <p class="discovery-excerpt">Deep within a remote hillside excavation, our team uncovered a breathtaking 2nd-century mosaic spanning over 14 square metres — its vivid geometric patterns and mythological scenes remarkably intact. Preliminary dating places its origins in the late Roman provincial era, making it one of the most significant finds of the decade. The mosaic is currently undergoing meticulous restoration in our conservation lab, with plans for museum display and academic publication.</p>
         </div>
       </div>
+
+      <!-- Antiques: ancient artifacts/bronze collection -->
       <div class="discovery-card reveal reveal-delay-1">
-        <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=700&q=80" alt="Bronze artifacts">
+        <img src="https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=700&q=80" alt="Ancient pottery artifacts">
         <div class="discovery-info">
           <span class="discovery-tag">Antiques</span>
           <h3 class="discovery-title">Rare Bronze Age Ceremonial Hoard Authenticated</h3>
-          <p class="discovery-excerpt">A collection of 47 bronze ceremonial vessels confirmed through isotope analysis to originate from an elite burial site circa 1100 BCE, now available to approved institutional collectors.</p>
+          <p class="discovery-excerpt">A collection of 47 bronze ceremonial vessels confirmed through isotope analysis, circa 1100 BCE, now available to approved institutional collectors.</p>
         </div>
       </div>
+
+      <!-- Real Estate: heritage palace/estate -->
       <div class="discovery-card reveal reveal-delay-2">
-        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&q=80" alt="Heritage estate">
+        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=700&q=80" alt="Heritage estate">
         <div class="discovery-info">
           <span class="discovery-tag">Real Estate</span>
           <h3 class="discovery-title">19th-Century Heritage Estate Acquired for Portfolio</h3>
           <p class="discovery-excerpt">A magnificent Baroque-era estate featuring original stone masonry, frescoed interiors, and 12 acres of ancient olive groves added to our exclusive property portfolio.</p>
         </div>
       </div>
+
+      <!-- Ancient writing/tablets -->
       <div class="discovery-card reveal reveal-delay-1">
-        <img src="https://images.unsplash.com/photo-1544020785-06de62d39a3c?w=700&q=80" alt="Ancient tablets">
+        <img src="https://images.unsplash.com/photo-1580136608773-bd1c6b8a9c7c?w=700&q=80" alt="Ancient cuneiform tablets">
         <div class="discovery-info">
           <span class="discovery-tag">New Find</span>
           <h3 class="discovery-title">Cuneiform Tablet Archive Recovered Intact</h3>
-          <p class="discovery-excerpt">An extraordinary cache of 200+ cuneiform tablets documenting ancient trade routes recovered from an undisclosed Near Eastern site, offering scholars unprecedented insight.</p>
+          <p class="discovery-excerpt">An extraordinary cache of 200+ cuneiform tablets documenting ancient trade routes, offering scholars unprecedented historical insight.</p>
         </div>
       </div>
+
+      <!-- Gold antique coins -->
       <div class="discovery-card reveal reveal-delay-2">
-        <img src="https://images.unsplash.com/photo-1559715745-e1b425a982da?w=700&q=80" alt="Gold coins">
+        <img src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=700&q=80" alt="Antique gold coins">
         <div class="discovery-info">
           <span class="discovery-tag">Auction Ready</span>
           <h3 class="discovery-title">Byzantine Gold Coin Collection — Private Auction</h3>
-          <p class="discovery-excerpt">A curated collection of 89 gold Byzantine solidi spanning five emperors, each piece authenticated, graded, and certified. Available exclusively through DS T Services private sale.</p>
+          <p class="discovery-excerpt">A curated collection of 89 gold Byzantine solidi spanning five emperors, each authenticated, graded, and certified. Available exclusively through DS T Services.</p>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
+<!-- QUOTE -->
 <section class="quote-section">
   <div class="section-inner">
     <p class="quote-text reveal">"Every layer of earth we remove is a page turned in the great book of human civilization — and every authentic piece we place in the right hands is history given a second life."</p>
@@ -342,6 +369,7 @@
   </div>
 </section>
 
+<!-- TEAM -->
 <section class="team" id="team">
   <div class="section-inner">
     <p class="section-label reveal">Leadership</p>
@@ -351,25 +379,32 @@
   <div class="section-inner" style="margin-top:60px">
     <div class="team-grid">
       <div class="team-card reveal">
-        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" alt="Donato Trioni">
-        <div class="team-info">
+        
+        <!-- Elegant fallback background if image fails -->
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#2a2118 0%,#1a1510 100%);display:flex;align-items:center;justify-content:center;z-index:0;">
+          <span style="font-family:'Cinzel',serif;font-size:4rem;color:rgba(201,168,76,0.3);">DT</span>
+        </div>
+        <div class="team-info" style="z-index:1;position:relative;">
           <p class="team-role">Director & Co-Founder</p>
           <h3 class="team-name">Donato Trioni</h3>
-          <a href="/cdn-cgi/l/email-protection#165279787762796479747f782421566477756c723875797b" class="team-email"><span class="__cf_email__" data-cfemail="c682a9a8a7b2a9b4a9a4afa8f4f186b4a7a5bca2e8a5a9ab">[email&#160;protected]</span></a>
+          <a href="/cdn-cgi/l/email-protection#81c5eeefe0f5eef3eee3e8efb3b6c1f3e0e2fbe5afe2eeec" class="team-email"><span class="__cf_email__" data-cfemail="2d6942434c59425f424f44431f1a6d5f4c4e5749034e4240">[email&#160;protected]</span></a>
         </div>
       </div>
       <div class="team-card reveal reveal-delay-1">
-        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80" alt="Suzan Rhodes">
-        <div class="team-info">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#2a2118 0%,#1a1510 100%);display:flex;align-items:center;justify-content:center;">
+          <span style="font-family:'Cinzel',serif;font-size:4rem;color:rgba(201,168,76,0.3);">SR</span>
+        </div>
+        <div class="team-info" style="position:relative;z-index:1;">
           <p class="team-role">Director & Administrative Officer</p>
           <h3 class="team-name">Suzan Rhodes</h3>
-          <a href="/cdn-cgi/l/email-protection#97e4e2ede5fff8f3f2e4d7e5f6f4edf3b9f4f8fa" class="team-email"><span class="__cf_email__" data-cfemail="0675737c746e69626375467467657c622865696b">[email&#160;protected]</span></a>
+          <a href="/cdn-cgi/l/email-protection#0c7f79767e646368697f4c7e6d6f7668226f6361" class="team-email"><span class="__cf_email__" data-cfemail="91e2e4ebe3f9fef5f4e2d1e3f0f2ebf5bff2fefc">[email&#160;protected]</span></a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="section-inner">
     <div class="contact-grid">
@@ -383,42 +418,42 @@
             <div class="contact-icon">🏺</div>
             <div>
               <p class="contact-item-label">Archaeological Enquiries</p>
-              <p class="contact-item-value"><a href="/cdn-cgi/l/email-protection#0b6a7968636a6e6467646c724b796a68716f25686466"><span class="__cf_email__" data-cfemail="fb9a8998939a9e9497949c82bb899a98819fd5989496">[email&#160;protected]</span></a></p>
+              <p class="contact-item-value"><a href="/cdn-cgi/l/email-protection#99f8ebfaf1f8fcf6f5f6fee0d9ebf8fae3fdb7faf6f4"><span class="__cf_email__" data-cfemail="c9a8bbaaa1a8aca6a5a6aeb089bba8aab3ade7aaa6a4">[email&#160;protected]</span></a></p>
             </div>
           </div>
           <div class="contact-item reveal reveal-delay-1">
             <div class="contact-icon">🏛️</div>
             <div>
               <p class="contact-item-label">Antiques & Collections</p>
-              <p class="contact-item-value"><a href="/cdn-cgi/l/email-protection#12737c667b636777615260737168763c717d7f"><span class="__cf_email__" data-cfemail="0869667c61797d6d7b487a696b726c266b6765">[email&#160;protected]</span></a></p>
+              <p class="contact-item-value"><a href="/cdn-cgi/l/email-protection#14757a607d65617167546675776e703a777b79"><span class="__cf_email__" data-cfemail="13727d677a626676605361727069773d707c7e">[email&#160;protected]</span></a></p>
             </div>
           </div>
           <div class="contact-item reveal reveal-delay-2">
             <div class="contact-icon">🏡</div>
             <div>
               <p class="contact-item-label">Real Estate</p>
-              <p class="contact-item-value"><a href="/cdn-cgi/l/email-protection#d2a0b7b3beb7a1a6b3a6b792a0b3b1a8b6fcb1bdbf"><span class="__cf_email__" data-cfemail="86f4e3e7eae3f5f2e7f2e3c6f4e7e5fce2a8e5e9eb">[email&#160;protected]</span></a></p>
+              <p class="contact-item-value"><a href="/cdn-cgi/l/email-protection#532136323f3620273227361321323029377d303c3e"><span class="__cf_email__" data-cfemail="681a0d09040d1b1c091c0d281a090b120c460b0705">[email&#160;protected]</span></a></p>
             </div>
           </div>
           <div class="contact-item reveal">
             <div class="contact-icon">✉️</div>
             <div>
               <p class="contact-item-label">General Enquiries</p>
-              <p class="contact-item-value"><a href="/cdn-cgi/l/email-protection#345d5a525b744655574e501a575b59"><span class="__cf_email__" data-cfemail="137a7d757c5361727069773d707c7e">[email&#160;protected]</span></a></p>
+              <p class="contact-item-value"><a href="/cdn-cgi/l/email-protection#224b4c444d6250434158460c414d4f"><span class="__cf_email__" data-cfemail="f49d9a929bb48695978e90da979b99">[email&#160;protected]</span></a></p>
             </div>
           </div>
           <div class="contact-item reveal reveal-delay-1">
             <div class="contact-icon">👤</div>
             <div>
               <p class="contact-item-label">Director — Donato Trioni</p>
-              <p class="contact-item-value"><a href="/cdn-cgi/l/email-protection#3f7b50515e4b504d505d56510d087f4d5e5c455b115c5052"><span class="__cf_email__" data-cfemail="15517a7b74617a677a777c7b2722556774766f713b767a78">[email&#160;protected]</span></a></p>
+              <p class="contact-item-value"><a href="/cdn-cgi/l/email-protection#084c6766697c677a676a61663a3f487a696b726c266b6765"><span class="__cf_email__" data-cfemail="53173c3d32273c213c313a3d61641321323029377d303c3e">[email&#160;protected]</span></a></p>
             </div>
           </div>
           <div class="contact-item reveal reveal-delay-2">
             <div class="contact-icon">👤</div>
             <div>
               <p class="contact-item-label">Director & Admin — Suzan Rhodes</p>
-              <p class="contact-item-value"><a href="/cdn-cgi/l/email-protection#9cefe9e6eef4f3f8f9efdceefdffe6f8b2fff3f1"><span class="__cf_email__" data-cfemail="6c1f19161e040308091f2c1e0d0f1608420f0301">[email&#160;protected]</span></a></p>
+              <p class="contact-item-value"><a href="/cdn-cgi/l/email-protection#0477717e766c6b606177447665677e602a676b69"><span class="__cf_email__" data-cfemail="8bf8fef1f9e3e4efeef8cbf9eae8f1efa5e8e4e6">[email&#160;protected]</span></a></p>
             </div>
           </div>
         </div>
@@ -438,7 +473,7 @@
             <select class="form-select">
               <option value="">Select a service</option>
               <option>Archaeological Discovery</option>
-              <option>Antiques & Collectibles</option>
+              <option>Antiques &amp; Collectibles</option>
               <option>Real Estate</option>
               <option>General Enquiry</option>
             </select>
@@ -454,6 +489,7 @@
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div>
@@ -464,9 +500,11 @@
       <p class="footer-heading">Services</p>
       <ul class="footer-links">
         <li><a href="#services">Archaeological Discovery</a></li>
-        <li><a href="#services">Antiques & Collectibles</a></li>
+        <li><a href="#services">Antiques &amp; Collectibles</a></li>
         <li><a href="#services">Real Estate</a></li>
       </ul>
     </div>
     <div>
       <p class="footer-heading">Contact</p>
+      <ul class="footer-links">
+        <li><a h
